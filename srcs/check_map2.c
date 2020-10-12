@@ -6,7 +6,7 @@
 /*   By: flolefeb <flolefeb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 13:45:27 by flolefeb          #+#    #+#             */
-/*   Updated: 2020/10/13 00:13:10 by flolefeb         ###   ########.fr       */
+/*   Updated: 2020/10/13 00:27:01 by flolefeb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,8 @@ int		check_char(int i, int j, t_env *env)
 	if (env->t_map.map[i][j] != '1'
 		&& (env->t_map.map[i][j] == '2' || env->t_map.map[i][j] == '0'))
 	{
-		printf("find_wall_up(env, %d, %d) = %d\n", i, j, find_wall_up(env, i, j));
 		if (find_wall_down(env, i, j) != 1 || find_wall_up(env, i, j) != 1)
-		{
-			printf ("ici\n");
 			return (MAP_NOT_CLOSED);
-		}
 	}
 	return (SUCCESS);
 }

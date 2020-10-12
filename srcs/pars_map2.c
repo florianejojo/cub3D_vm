@@ -6,23 +6,23 @@
 /*   By: flolefeb <flolefeb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 14:06:24 by flolefeb          #+#    #+#             */
-/*   Updated: 2020/10/12 22:35:17 by flolefeb         ###   ########.fr       */
+/*   Updated: 2020/10/13 00:30:00 by flolefeb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 
-// void	set_res_max(t_env *env)
-// {
-// 	int	max_width;
-// 	int max_height;
+void	set_res_max(t_env *env)
+{
+	int	max_width;
+	int max_height;
 
-// 	mlx_get_screen_size(env->mlx_ptr, &max_width, &max_height);
-// 	if (env->t_map.res.width > max_width)
-// 		env->t_map.res.width = max_width;
-// 	if (env->t_map.res.height > max_height)
-// 		env->t_map.res.height = max_height;
-// }
+	mlx_get_screen_size(env->mlx_ptr, &max_width, &max_height);
+	if (env->t_map.res.width > max_width)
+		env->t_map.res.width = max_width;
+	if (env->t_map.res.height > max_height)
+		env->t_map.res.height = max_height;
+}
 
 int		check_textures(t_env *env)
 {

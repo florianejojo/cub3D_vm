@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 
-LINUX			= no
+LINUX			= yes
 
 ifeq ($(LINUX), yes)
 MLX_FLAGS		= -lXext -lX11 -lm -lbsd
@@ -66,7 +66,7 @@ all				:	$(NAME)
 $(NAME) 		:	$(OBJS)
 					make -C $(MLX_PATH)
 					make -C $(LIBFT_PATH)
-					${CC} ${CFLAGS} -fsanitize=address -g3 -I $(INCLUDES) $^ $(MLX_FLAGS) -o $@ ./minilibx-linux/libmlx.a  ./libft/libft.a
+					${CC} ${CFLAGS} -I $(INCLUDES) $^ $(MLX_FLAGS) -o $@ ./minilibx-linux/libmlx.a  ./libft/libft.a
 					printf "cub3D is ready ! \n\033[0m"
 
 
