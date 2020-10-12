@@ -6,7 +6,7 @@
 /*   By: flolefeb <flolefeb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 14:05:30 by flolefeb          #+#    #+#             */
-/*   Updated: 2020/10/12 14:40:15 by flolefeb         ###   ########.fr       */
+/*   Updated: 2020/10/12 23:59:42 by flolefeb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ int		find_start_end_line(t_env *env)
 		}
 		i++;
 	}
+	printf ("start line = '%s' \n", env->t_map.map[env->t_map.start_line]);
 	find_end_line(i, j, env);
 	if (env->t_map.start_line == 0 || env->t_map.end_line == 0
 		|| env->t_map.i == 0)

@@ -6,7 +6,7 @@
 /*   By: flolefeb <flolefeb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 11:08:37 by flolefeb          #+#    #+#             */
-/*   Updated: 2020/10/12 11:14:59 by flolefeb         ###   ########.fr       */
+/*   Updated: 2020/10/12 23:19:22 by flolefeb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,12 @@ int		main(int argc, char **argv)
 		return (print_error(env->error, env));
 	if ((env->error = init_raycasting(env)) != SUCCESS)
 		return (print_error(env->error, env));
-	if (argc == 3 && (env->error = check_flag_save(argv[2], env)) != SUCCESS)
-		return (print_error(env->error, env));
-	if (env->save == 1 && ((env->error = save_bmp(env)) != SUCCESS))
-		return (print_error(env->error, env));
-	else if ((env->error = raycasting(env)) != SUCCESS)
+	if (argc == 3 && (env->error = check_flag_save(argv[2], env)) == SUCCESS)
+	{
+		save_bmp(env);
+		return (1);
+	}
+	if ((env->error = raycasting(env)) != SUCCESS)
 		return (print_error(env->error, env));
 	quit(env);
 	return (1);

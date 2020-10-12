@@ -6,7 +6,7 @@
 /*   By: flolefeb <flolefeb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 18:21:28 by flolefeb          #+#    #+#             */
-/*   Updated: 2020/10/09 16:48:15 by flolefeb         ###   ########.fr       */
+/*   Updated: 2020/10/12 23:27:13 by flolefeb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int		save_bmp(t_env *env)
 		env->zbuffer[x] = env->ray.perpwalldist;
 		x++;
 	}
+	add_sprites(env);
 	put_image_to_bmp(env);
 	return (SUCCESS);
 }

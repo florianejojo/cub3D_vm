@@ -6,7 +6,7 @@
 /*   By: flolefeb <flolefeb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 14:06:17 by flolefeb          #+#    #+#             */
-/*   Updated: 2020/09/30 18:22:23 by flolefeb         ###   ########.fr       */
+/*   Updated: 2020/10/12 23:07:49 by flolefeb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		pars_resolution(t_env *env, int i, int j)
 	}
 	if (env->t_map.map[i][j = skip_wsp(i, j, env)] != 0)
 		return (ERROR_RES);
-	set_res_max(env);
+	// set_res_max(env);
 	if (env->t_map.res.width <= 0 || env->t_map.res.height <= 0)
 		return (ERROR_RES);
 	return (SUCCESS);
@@ -76,13 +76,17 @@ int		pars_colors(t_env *env, int i, int j)
 	while (env->t_map.map[i][j] >= '0' && env->t_map.map[i][j]
 		<= '9' && pars_colors_rgb(env, i, j, 'r') == SUCCESS)
 		j++;
-	j = skip_wsp(i, j, env) + 1;
 	j = skip_wsp(i, j, env);
+	if (env->t_map.map[i][j] != ',')
+		return (ERROR_COLORS);
+	j = skip_wsp(i, j + 1, env);
 	while (env->t_map.map[i][j] >= '0' && env->t_map.map[i][j]
 		<= '9' && pars_colors_rgb(env, i, j, 'g') == SUCCESS)
 		j++;
-	j = skip_wsp(i, j, env) + 1;
 	j = skip_wsp(i, j, env);
+	if (env->t_map.map[i][j] != ',')
+		return (ERROR_COLORS);
+	j = skip_wsp(i, j + 1, env);
 	while (env->t_map.map[i][j] >= '0' && env->t_map.map[i][j]
 		<= '9' && pars_colors_rgb(env, i, j, 'b') == SUCCESS)
 		j++;
