@@ -216,6 +216,8 @@ typedef struct		s_env
 {
 	t_textures_path t_textures_path;
 	t_map			t_map;
+	int				res_max_height;
+	int				res_max_width;
 	t_res			res_max;
 	int				sizex;
 	int				sizey;

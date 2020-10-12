@@ -31,9 +31,7 @@ int		pars_resolution(t_env *env, int i, int j)
 	if (env->t_map.map[i][j = skip_wsp(i, j, env)] != 0)
 		return (ERROR_RES);
 	set_res_max(env);
-	if (env->t_map.res.width == 0 || env->t_map.res.height == 0
-		|| env->t_map.res.width > env->res_max.width
-		|| env->t_map.res.height > env->res_max.height)
+	if (env->t_map.res.width <= 0 || env->t_map.res.height <= 0)
 		return (ERROR_RES);
 	return (SUCCESS);
 }
