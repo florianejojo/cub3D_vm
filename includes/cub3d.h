@@ -24,7 +24,7 @@
 # include "keycode.h"
 
 # define SAVE_FILE "screenshot.bmp"
-# define RAYSPEED 0.1
+# define RAYSPEED 0.01
 # define PLANE 0.5
 
 typedef struct		s_check
@@ -216,9 +216,6 @@ typedef struct		s_env
 {
 	t_textures_path t_textures_path;
 	t_map			t_map;
-	int				res_max_height;
-	int				res_max_width;
-	t_res			res_max;
 	int				sizex;
 	int				sizey;
 	t_colors		t_colors;

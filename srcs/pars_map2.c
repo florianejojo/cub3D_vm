@@ -14,21 +14,14 @@
 
 void	set_res_max(t_env *env)
 {
-	
 	int	max_width;
 	int max_height;
 
-
 	mlx_get_screen_size(env->mlx_ptr, &max_width, &max_height);
-	printf("hello\n");
-	printf("max_width = %d\n", max_width);
 	if (env->t_map.res.width > max_width)
 		env->t_map.res.width = max_width;
 	if (env->t_map.res.height > max_height)
 		env->t_map.res.height = max_height;
-
-	//env->res_max.height = 4000;
-	//env->res_max.width = 4000;
 }
 
 int		check_textures(t_env *env)

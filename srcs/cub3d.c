@@ -35,6 +35,8 @@ int		main(int argc, char **argv)
 	if (!(env = malloc(sizeof(t_env))))
 		return (print_error(MALLOC_FAILED, env));
 	ft_bzero(env, sizeof(t_env));
+	if (!(env->mlx_ptr = mlx_init()))
+		return (MLX_FAIL);
 	if ((argc != 2 && argc != 3))
 		return (print_error(WRONG_ARGS, env));
 	if ((env->error = treat_file(argv[1], env)) != SUCCESS)
