@@ -6,7 +6,7 @@
 /*   By: flolefeb <flolefeb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 10:56:24 by flolefeb          #+#    #+#             */
-/*   Updated: 2020/10/12 23:41:13 by flolefeb         ###   ########.fr       */
+/*   Updated: 2020/10/13 00:35:52 by flolefeb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int		raycasting(t_env *env)
 		env->t_map.res.height, "Cub3D")))
 		return (MLX_FAIL);
 	ft_bzero(&env->mvt, sizeof(t_mvt));
-	mlx_hook(env->win_ptr, 17, STRUCTURENOTIFYMASK, quit, env);
+	mlx_hook(env->win_ptr, 33, STRUCTURENOTIFYMASK, quit, env);
 	mlx_hook(env->win_ptr, KEYPRESS, KEYPRESSMASK, key_press, env);
 	mlx_hook(env->win_ptr, KEYRELEASE, KEYRELEASEMASK, key_release, env);
 	mlx_loop_hook(env->mlx_ptr, main_loop, env);
