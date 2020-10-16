@@ -6,7 +6,7 @@
 /*   By: flolefeb <flolefeb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 11:08:37 by flolefeb          #+#    #+#             */
-/*   Updated: 2020/10/12 23:19:22 by flolefeb         ###   ########.fr       */
+/*   Updated: 2020/10/16 14:22:42 by flolefeb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,14 @@ int		check_flag_save(char *str, t_env *env)
 	if (str[4] != 'v' || str[5] != 'e')
 		return (WRONG_ARGS);
 	env->save = 1;
+	return (SUCCESS);
+}
+
+int		save(t_env *env, char *argv2)
+{
+	if ((env->error = check_flag_save(argv2, env)) != SUCCESS)
+		return (print_error(env->error, env));
+	save_bmp(env);
 	return (SUCCESS);
 }
 
@@ -43,13 +51,10 @@ int		main(int argc, char **argv)
 		return (print_error(env->error, env));
 	if ((env->error = init_raycasting(env)) != SUCCESS)
 		return (print_error(env->error, env));
-	if (argc == 3 && (env->error = check_flag_save(argv[2], env)) == SUCCESS)
-	{
-		save_bmp(env);
-		return (1);
-	}
-	if ((env->error = raycasting(env)) != SUCCESS)
+	if (argc == 3)
+		return (save(env, argv[2]));
+	else if ((env->error = raycasting(env)) != SUCCESS)
 		return (print_error(env->error, env));
 	quit(env);
-	return (1);
+	return (SUCCESS);
 }
