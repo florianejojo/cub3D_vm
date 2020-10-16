@@ -1,15 +1,15 @@
  
 C  255,255,250
 F  39,35,36 
-NO ./pics/losanges.xpm	
-SO ./pics/uni_orange.xpm	
+NO ./pics/vint1.xpm	
+NO ./pics/vint1.xpm	
 WE ./pics/vint1.xpm		 	         
-EA ./pics/yolandi.xpm 
+EA ./pics/vint1.xpm 
 
-S ./pics/oeil13.xpm	     
+S ./pics/gribou1.xpm    
 
 R 400 400
-111111111111111111111111111111
+11111111111111 111111111111111
 111201111000    0002011100001111111
 1112111110000  002S200001111111
 111211111000  00020   00001111111

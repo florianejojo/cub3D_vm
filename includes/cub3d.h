@@ -6,7 +6,7 @@
 /*   By: flolefeb <flolefeb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 16:57:37 by flolefeb          #+#    #+#             */
-/*   Updated: 2020/10/13 16:14:02 by flolefeb         ###   ########.fr       */
+/*   Updated: 2020/10/16 12:19:55 by flolefeb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ typedef struct		s_check
 	short			textures;
 	short			F;
 	short			C;
+	short			NO;
+	short			SO;
+	short			WE;
+	short			EA;
+	short			S;
 }					t_check;
 
 typedef enum		s_error
