@@ -6,7 +6,7 @@
 /*   By: flolefeb <flolefeb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 16:57:37 by flolefeb          #+#    #+#             */
-/*   Updated: 2020/10/16 12:19:55 by flolefeb         ###   ########.fr       */
+/*   Updated: 2020/10/16 14:50:29 by flolefeb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -311,5 +311,7 @@ void	draw_line(t_env *env, int x, int drawstart, int drawend);
 int		save_bmp(t_env *env);
 void	free_img(t_img *img, t_env *env);
 void	fill_spaces(t_env *env);
+int	found_elem(t_env *env, int i, int j);
+int		find_start_end_line(t_env *env);
 
 #endif

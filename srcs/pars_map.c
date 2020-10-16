@@ -6,7 +6,7 @@
 /*   By: flolefeb <flolefeb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 14:06:17 by flolefeb          #+#    #+#             */
-/*   Updated: 2020/10/16 12:08:56 by flolefeb         ###   ########.fr       */
+/*   Updated: 2020/10/16 14:53:07 by flolefeb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int		pars_resolution(t_env *env, int i, int j)
 	}
 	if (env->t_map.map[i][j = skip_wsp(i, j, env)] != 0)
 		return (ERROR_RES);
-	// set_res_max(env);
-	if (env->t_map.res.width <= 0 || env->t_map.res.height <= 0)
+	set_res_max(env);
+	if (env->t_map.res.width < 100 || env->t_map.res.height < 100)
 		return (ERROR_RES);
 	return (SUCCESS);
 }

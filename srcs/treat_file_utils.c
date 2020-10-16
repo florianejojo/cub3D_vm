@@ -6,7 +6,7 @@
 /*   By: flolefeb <flolefeb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 15:23:57 by flolefeb          #+#    #+#             */
-/*   Updated: 2020/10/13 16:24:29 by flolefeb         ###   ########.fr       */
+/*   Updated: 2020/10/16 14:36:54 by flolefeb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ int		is_wsp(int i, int j, t_env *env)
 
 int		find_wall_up(t_env *env, int i, int j)
 {
-	i = i - 1;
+	if (env->t_map.map[i - 1])
+		i = i - 1;
 	while (env->t_map.map[i] && env->t_map.map[i][j] != '1'
 		&& i >= env->t_map.start_line)
 		i--;

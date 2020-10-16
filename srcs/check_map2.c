@@ -6,11 +6,50 @@
 /*   By: flolefeb <flolefeb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/30 13:45:27 by flolefeb          #+#    #+#             */
-/*   Updated: 2020/10/13 16:22:48 by flolefeb         ###   ########.fr       */
+/*   Updated: 2020/10/16 14:50:49 by flolefeb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
+
+void	find_end_line(int i, int j, t_env *env)
+{
+	i = env->t_map.nb_lines - 1;
+	while (env->t_map.end_line == 0 && i > env->t_map.start_line)
+	{
+		if (env->t_map.map[i])
+		{
+			j = skip_wsp(i, 0, env);
+			if (env->t_map.map[i][j])
+				env->t_map.end_line = i;
+		}
+		i--;
+	}
+}
+
+int		find_start_end_line(t_env *env)
+{
+	int j;
+	int i;
+
+	j = 0;
+	i = env->t_map.i;
+	while (i < env->t_map.nb_lines && env->t_map.start_line == 0)
+	{
+		if (env->t_map.map[i])
+		{
+			j = skip_wsp(i, 0, env);
+			if (env->t_map.map[i][j])
+				env->t_map.start_line = i;
+		}
+		i++;
+	}
+	find_end_line(i, j, env);
+	if (env->t_map.start_line == 0 || env->t_map.end_line == 0
+		|| env->t_map.i == 0)
+		return (ERROR_START_END);
+	return (SUCCESS);
+}
 
 void	fill_spaces(t_env *env)
 {
