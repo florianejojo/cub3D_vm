@@ -59,9 +59,7 @@ int		found_elem(t_env *env, int i, int j)
 		env->t_check.EA = 1;
 	else if (env->t_map.map[i][j] == 'S' && env->t_map.map[i][j + 1] != 'O')
 		env->t_check.S = 1;
-	else
-		return (INVALID_ELEMENTS);
-	return (SUCCESS);
+	return(SUCCESS);
 }
 
 int		elems(int i, int j, t_env *env)
@@ -77,8 +75,7 @@ int		elems(int i, int j, t_env *env)
 		|| (env->t_map.map[i][j] == 'S' && env->t_map.map[i][j + 1] != 'O'
 			&& env->t_check.S != 0))
 		return (INVALID_ELEMENTS);
-	if (found_elem(env, i, j) != SUCCESS)
-		return (INVALID_ELEMENTS);
+	found_elem(env, i, j);
 	return (SUCCESS);
 }
 

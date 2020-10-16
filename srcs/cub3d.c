@@ -31,6 +31,7 @@ int		save(t_env *env, char *argv2)
 	if ((env->error = check_flag_save(argv2, env)) != SUCCESS)
 		return (print_error(env->error, env));
 	save_bmp(env);
+	quit(env);
 	return (SUCCESS);
 }
 

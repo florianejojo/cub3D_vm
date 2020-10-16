@@ -81,10 +81,8 @@ int		quit(t_env *env)
 	if (env->win_ptr)
 		mlx_destroy_window(env->mlx_ptr, env->win_ptr);
 	if (env->img)
-	{
 		mlx_destroy_image(env->mlx_ptr, env->img->ptr);
 		free(env->img);
-	}
 	if (env->mlx_ptr)
 		free(env->mlx_ptr);
 	if (env)
