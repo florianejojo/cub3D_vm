@@ -6,7 +6,7 @@
 /*   By: flolefeb <flolefeb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 16:57:37 by flolefeb          #+#    #+#             */
-/*   Updated: 2020/10/12 22:36:16 by flolefeb         ###   ########.fr       */
+/*   Updated: 2020/10/13 16:14:02 by flolefeb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -305,5 +305,6 @@ int		create_rgb(int r, int g, int b);
 void	draw_line(t_env *env, int x, int drawstart, int drawend);
 int		save_bmp(t_env *env);
 void	free_img(t_img *img, t_env *env);
+void	fill_spaces(t_env *env);
 
 #endif

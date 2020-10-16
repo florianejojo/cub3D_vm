@@ -21,7 +21,7 @@ MLX_FLAGS		= -lmlx -framework OpenGL -framework AppKit
 MLX_PATH		= ./minilibx_opengl_20191021/
 endif
 
-NAME			=	cub3D
+NAME			=	Cub3D
 
 LIBFT_PATH		=	./libft/
 

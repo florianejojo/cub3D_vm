@@ -6,7 +6,7 @@
 /*   By: flolefeb <flolefeb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/18 14:05:43 by flolefeb          #+#    #+#             */
-/*   Updated: 2020/10/12 02:14:10 by flolefeb         ###   ########.fr       */
+/*   Updated: 2020/10/13 16:17:35 by flolefeb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,6 @@ int		treat_file(char *file, t_env *env)
 		return (env->error);
 	else if ((env->error = pars_map(env)) != SUCCESS)
 		return (env->error);
+	fill_spaces(env);
 	return (SUCCESS);
 }
