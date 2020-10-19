@@ -52,10 +52,8 @@ int		is_wsp(int i, int j, t_env *env)
 
 int		find_wall_up(t_env *env, int i, int j)
 {
-	if (env->t_map.map[i - 1])
-		i = i - 1;
 	while (env->t_map.map[i] && env->t_map.map[i][j] != '1'
-		&& i >= env->t_map.start_line)
+		&& i > env->t_map.start_line)
 		i--;
 	if (env->t_map.map[i] && env->t_map.map[i][j] == '1')
 		return (1);
